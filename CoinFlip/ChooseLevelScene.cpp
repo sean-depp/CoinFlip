@@ -34,7 +34,6 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QMainWindow(parent)
 	backBtn->move(this->width()-backBtn->width()-SPACE8, this->height()-backBtn->height()-SPACE8);
 
 	connect(backBtn, &QPushButton::clicked, [=]() {
-		qDebug() << "µã»÷";
 	});
 }
 
