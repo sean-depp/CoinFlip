@@ -39,6 +39,12 @@
     <ClCompile Include="MainScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyPushButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChooseLevelScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -47,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainScene.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MyPushButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ChooseLevelScene.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -1,4 +1,6 @@
-x64/
+.vs/
+build-CoinFlip-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/
 CoinFlip/GeneratedFiles/
 CoinFlip/x64/
-.vs/
+Debug/
+x64/
