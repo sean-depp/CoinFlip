@@ -4,7 +4,7 @@
 #include <QPropertyAnimation>
 #include <QRect>
 
-MyPushButton::MyPushButton(QString normalImg, QString pressImg)
+MyPushButton::MyPushButton(QString normalImg, QString pressImg, QString index)
 {
 	this->mNormalImgPath = normalImg;
 	this->mPressImgPath = pressImg;

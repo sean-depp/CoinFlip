@@ -37,6 +37,13 @@ MainScene::MainScene(QWidget *parent)
 			this->hide();
 			levelScene->show();
 		});
+	});
+
+	connect(levelScene, &ChooseLevelScene::backToMain, [=]() {
+		QTimer::singleShot(200, this, [=]() {
+			levelScene->hide();
+			this->show();
+		});
 
 	});
 }
