@@ -45,6 +45,15 @@
     <ClCompile Include="ChooseLevelScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCoin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -59,6 +68,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ChooseLevelScene.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PlayScene.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MyCoin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DataConfig.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

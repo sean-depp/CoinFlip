@@ -3,6 +3,8 @@
 #include "MyPushButton.h"
 #include <QPainter>
 #include <QTimer>
+#include <QSound>
+
 MainScene::MainScene(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -22,6 +24,8 @@ MainScene::MainScene(QWidget *parent)
 		this->close();
 	});
 
+	QSound * sound = new QSound(":/res/TapButtonSound.wav",this);
+
 	MyPushButton * startBtn = new MyPushButton(":/res/MenuSceneStartButton.png");
 	startBtn->setParent(this);
 	startBtn->move(this->width() *0.5 - startBtn->width()*0.5, this->height()*0.7);
@@ -29,23 +33,31 @@ MainScene::MainScene(QWidget *parent)
 	levelScene = new ChooseLevelScene;
 
 	connect(startBtn, &QPushButton::clicked, [=]() {
+		// 播放音效
+		sound->play();
+		// 按钮弹跳
 		int DIS = 30;
 		startBtn->zoomUpDown(0, 0, 0, DIS);
 		startBtn->zoomUpDown(0, DIS, 0, 0);
 
 		QTimer::singleShot(300, this, [=]() {
+			// 位置保持
+			levelScene->setGeometry(this->geometry());
+
 			this->hide();
 			levelScene->show();
 		});
 	});
 
 	connect(levelScene, &ChooseLevelScene::backToMain, [=]() {
+		this->setGeometry(levelScene->geometry());
 		QTimer::singleShot(200, this, [=]() {
+			
 			levelScene->hide();
 			this->show();
 		});
-
 	});
+
 }
 
 void MainScene::paintEvent(QPaintEvent *event) {

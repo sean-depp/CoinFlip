@@ -63,7 +63,24 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QMainWindow(parent)
 		levelBtn->move(levelX + i % colCount * (levelBtn->width() + SPACE24), levelY + i / colCount * (levelBtn->height() + SPACE24));
 
 		connect(levelBtn, &QPushButton::clicked, [=]() {
-			qDebug() << i;
+			if (playScene == nullptr) {
+				this->playScene = new PlayScene(i);
+
+				playScene->setGeometry(this->geometry());
+				this->hide();
+				this->playScene->show();
+
+				connect(this->playScene, &PlayScene::backToChoose, [=]() {
+					QTimer::singleShot(200, this, [=]() {
+						this->setGeometry(playScene->geometry());
+						// 删除游戏场景
+						delete this->playScene;
+						playScene = nullptr;
+
+						this->show();
+					});
+				});
+			}
 		});
 
 		// 使用label实现
@@ -71,10 +88,13 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QMainWindow(parent)
 		QLabel * label = new QLabel;
 		label->setParent(this);
 		label->setFixedSize(levelBtn->width(), levelBtn->height());
-		label->setText(QString::number(i));
+		label->setText(QString::number(i + 1));
 		label->move(levelX + i % colCount * (levelBtn->width() + SPACE24), levelY + i / colCount * (levelBtn->height() + SPACE24));
 
+		// 设置对齐方式
 		label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+
+		// 设置鼠标穿透
 		label->setAttribute(Qt::WA_TransparentForMouseEvents);
 	}
 

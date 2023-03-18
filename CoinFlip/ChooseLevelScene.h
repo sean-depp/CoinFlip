@@ -2,6 +2,7 @@
 #define CHOOSELEVELSCENE_H
 
 #include <QMainWindow>
+#include "PlayScene.h"
 
 class ChooseLevelScene : public QMainWindow
 {
@@ -12,6 +13,8 @@ public:
 	void paintEvent(QPaintEvent *event);
 
 	QMenuBar * mBar = nullptr;
+	
+	PlayScene * playScene = nullptr;
 signals:
 	// 自定义信号只需要声明，不需要实现
 	// 此信号用来从关卡选择返回主场景

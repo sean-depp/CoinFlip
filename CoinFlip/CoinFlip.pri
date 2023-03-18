@@ -9,10 +9,17 @@ message("You are running qmake on a generated .pro file. This may not work!")
 
 HEADERS += ./stdafx.h \
     $$PWD/ChooseLevelScene.h \
+    $$PWD/DataConfig.h \
+    $$PWD/MyCoin.h \
+    $$PWD/PlayScene.h \
+    $$PWD/PlayScenescene.h \
     ./MainScene.h \
     ./MyPushButton.h
 SOURCES += ./main.cpp \
     $$PWD/ChooseLevelScene.cpp \
+    $$PWD/DataConfig.cpp \
+    $$PWD/MyCoin.cpp \
+    $$PWD/PlayScene.cpp \
     ./MainScene.cpp \
     ./MyPushButton.cpp \
     ./stdafx.cpp

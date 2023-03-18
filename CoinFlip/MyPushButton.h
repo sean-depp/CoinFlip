@@ -7,7 +7,7 @@ class MyPushButton : public QPushButton
 	Q_OBJECT
 public:
 	//    explicit MyPushButton(QWidget *parent = nullptr);
-	explicit MyPushButton(QString normalImg, QString pressImg = "");
+	explicit MyPushButton(QString normalImg, QString pressImg = "", QString index = "");
 
 	QString mNormalImgPath;
 	QString mPressImgPath;
